@@ -17,16 +17,16 @@ phases:
   build:
     commands:
       - echo "Building stage , Building our applications docker image !"
-      - docker build -t $CONTAINER_NAME:$latest .
-      - docker tag $CONTAINER_NAME:latest $REPOSITORY_URI:$CODEBUILD_BUILD_NUMBER
+      - docker build -t $CONTAINER_NAME:latest .
+      - docker tag $CONTAINER_NAME:latest $REPO_URI:$CODEBUILD_BUILD_NUMBER
       - echo "Image is pushed to the ECR repository !"
 
   post_build:
     commands:
       - echo "Started the pushing stage , to the ECR ..."
-      - docker push $REPOSITORY_URI:$CODEBUILD_BUILD_NUMBER
+      - docker push $REPO_URI:$CODEBUILD_BUILD_NUMBER
       - echo "Image is pushed into the ECR repo !"
-      - printf '[{"name":"%s","imageUri":"%s"}]' "$CONTAINER_NAME" "$REPOSITORY_URI:$CODEBUILD_BUILD_NUMBER" > imagedefinitions.json
+      - printf '[{"name":"%s","imageUri":"%s"}]' "$CONTAINER_NAME" "$REPO_URI:$CODEBUILD_BUILD_NUMBER" > imagedefinitions.json
 
 artifacts:
   files:
