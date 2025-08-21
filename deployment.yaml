@@ -5,7 +5,7 @@ metadata:
   labels:
     app: my-node-eks-app
 spec:
-  replicas: 2
+  replicas: 6
   selector:
     matchLabels:
       app: my-node-eks-app
@@ -15,8 +15,8 @@ spec:
         app: my-node-eks-app
     spec:
       containers:
-      - name: myapp
-        image: 076542168620.dkr.ecr.us-east-1.amazonaws.com/my-node-eks-app:2
+      - name: my-node-eks-app
+        image: 076542168620.dkr.ecr.us-east-1.amazonaws.com/my-node-eks-app:5
         ports:
         - containerPort: 3000
 
@@ -28,7 +28,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: myapp
+    app: my-node-eks-app
   ports:
     - protocol: TCP
       port: 80        # external port (LoadBalancer DNS ku)
