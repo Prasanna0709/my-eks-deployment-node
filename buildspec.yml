@@ -29,12 +29,12 @@ phases:
       - echo "Image is pushed into the ECR repo !"
       - printf '[{"name":"%s","imageUri":"%s"}]' "$CONTAINER_NAME" "$REPO_URI:$CODEBUILD_BUILD_NUMBER" > imagedefinitions.json
       - echo "kubectl works starts"
-       # Install kubectl
-      - curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.29.0/2024-01-04/bin/linux/amd64/kubectl
-      - chmod +x ./kubectl
-      - mv ./kubectl /usr/local/bin
-      # Update kubeconfig
-      - aws eks update-kubeconfig --region $CURRENT_REGION --name $CLUSTER_NAME
+      #  # Install kubectl
+      # - curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.29.0/2024-01-04/bin/linux/amd64/kubectl
+      # - chmod +x ./kubectl
+      # - mv ./kubectl /usr/local/bin
+      # # Update kubeconfig
+      # - aws eks update-kubeconfig --region $CURRENT_REGION --name $CLUSTER_NAME
       # # Update deployment with new image
       # - kubectl set image deployment/$CONTAINER_NAME $CONTAINER_NAME=$REPO_URI:$CODEBUILD_BUILD_NUMBER
       # - kubectl rollout status deployment/CONTAINER_NAME
