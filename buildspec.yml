@@ -4,7 +4,7 @@ env:
   variables:
     CONTAINER_NAME: "my-node-eks-app"
     CURRENT_REGION: "us-east-1"
-    CLUSTER_NAME: "my-eks-cluster-1"
+    CLUSTER_NAME: "eks-cluster-2"
 
 phases:
   pre_build:
