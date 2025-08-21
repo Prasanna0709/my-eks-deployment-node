@@ -15,6 +15,6 @@ subnet-04bf7fe19d695166c
 subnet-0e73e913fb8369fc1
 subnet-0c4e0d7572653a22e
 
-https://medium.com/@sanoj.sudo/how-to-create-aws-eks-cluster-step-by-step-a97420ede922
+// woker ode
 
 */

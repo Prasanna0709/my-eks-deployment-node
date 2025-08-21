@@ -35,9 +35,9 @@ phases:
       - mv ./kubectl /usr/local/bin
       # Update kubeconfig
       - aws eks update-kubeconfig --region $CURRENT_REGION --name $CLUSTER_NAME
-      # Update deployment with new image
-      - kubectl set image deployment/$CONTAINER_NAME $CONTAINER_NAME=$REPO_URI:$CODEBUILD_BUILD_NUMBER
-      - kubectl rollout status deployment/CONTAINER_NAME
+      # # Update deployment with new image
+      # - kubectl set image deployment/$CONTAINER_NAME $CONTAINER_NAME=$REPO_URI:$CODEBUILD_BUILD_NUMBER
+      # - kubectl rollout status deployment/CONTAINER_NAME
 
 
 artifacts:
