@@ -15,6 +15,11 @@ subnet-04bf7fe19d695166c
 subnet-0e73e913fb8369fc1
 subnet-0c4e0d7572653a22e
 
+
+codebuild-eks-2-cb-service-role
+
+AWSCodePipelineServiceRole-us-east-1-eks-2-cp
+
 // woker ode
 
 */
