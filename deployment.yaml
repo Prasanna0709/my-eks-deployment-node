@@ -18,7 +18,7 @@ spec:
       - name: myapp
         image: 076542168620.dkr.ecr.us-east-1.amazonaws.com/my-node-eks-app:2
         ports:
-        - containerPort: 80
+        - containerPort: 3000
 
 ---
 apiVersion: v1
@@ -32,4 +32,4 @@ spec:
   ports:
     - protocol: TCP
       port: 80        # external port (LoadBalancer DNS ku)
-      targetPort: 80  # containerPort
+      targetPort: 3000  # containerPort
